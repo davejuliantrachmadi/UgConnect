@@ -1,3 +1,2 @@
 # UgConnect
-for PI
-bgst
+Gunadarma Chatting Group
