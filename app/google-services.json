@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "45480594335",
+    "firebase_url": "https://ugconnect-d0057.firebaseio.com",
+    "project_id": "ugconnect-d0057",
+    "storage_bucket": "ugconnect-d0057.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45480594335:android:0f5d4c4f4cc0863a",
+        "android_client_info": {
+          "package_name": "com.davejr.ugconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45480594335-dvu9g9c54e7e7ba1oida5emo6ugcqnsl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.davejr.ugconnect",
+            "certificate_hash": "38e0b10cb011374f528b715535dd452113902ba2"
+          }
+        },
+        {
+          "client_id": "45480594335-2crqemrql7j6hap75f09grcjmffn5nnm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAMAO6kseJSJ59smeaTRjB_WBfMTFFwh8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45480594335-2crqemrql7j6hap75f09grcjmffn5nnm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
