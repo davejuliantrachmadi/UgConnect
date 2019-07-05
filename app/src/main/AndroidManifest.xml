@@ -3,21 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.davejr.ugconnect">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 
     <application
         android:allowBackup="true"
-        tools:replace="android:appComponentFactory"
         android:appComponentFactory="whateverString"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".SAP"></activity>
+        android:theme="@style/AppTheme"
+        tools:replace="android:appComponentFactory">
+        <activity
+            android:name=".HomeActivity"
+            android:parentActivityName=".HomeActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SAP" />
         <activity android:name=".BAPSI" />
         <activity android:name=".elearning" />
         <activity android:name=".Library" />
@@ -43,7 +46,6 @@
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".StartActivity" />
-        <activity android:name=".MainActivity" />
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".StartActivity" />

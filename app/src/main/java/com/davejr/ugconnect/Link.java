@@ -62,7 +62,7 @@ public class Link extends AppCompatActivity {
 
                     if (finalI == 0)
                     {
-                        Intent intent = new Intent(Link.this, ActivityOne.class);
+                        Intent intent = new Intent(Link.this, BAAK.class);
                         startActivity(intent);
                     }
                     else if (finalI == 1)

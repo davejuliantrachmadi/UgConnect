@@ -8,7 +8,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 
-public class ActivityOne extends AppCompatActivity {
+public class BAAK extends AppCompatActivity {
 WebView web_view;
 
     @Override
