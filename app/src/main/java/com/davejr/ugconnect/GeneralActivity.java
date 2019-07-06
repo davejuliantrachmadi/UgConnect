@@ -16,6 +16,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,7 +39,7 @@ public class GeneralActivity extends AppCompatActivity {
 
     ImageButton btnSendMsg;
     ImageButton photoBtn;
-    ImageView imgView;
+//    ImageView imgView;
 
     EditText etMsg;
 
@@ -46,14 +51,19 @@ public class GeneralActivity extends AppCompatActivity {
     String UserName, SelectedTopic, user_msg_key;
 
     private FirebaseAuth auth = FirebaseAuth.getInstance();
-    private DatabaseReference dbr = FirebaseDatabase.getInstance().getReference().getRoot();
+    private DatabaseReference dbr;
     private Uri filePath;
+    private FirebaseStorage mFirebaseStorage;
+    private StorageReference mChatPhotosStorageReference;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general);
 
+        mFirebaseStorage = FirebaseStorage.getInstance();
         btnSendMsg = (ImageButton) findViewById(R.id.btnSendMsg);
         etMsg = (EditText) findViewById(R.id.etMessage);
         etMsg.setText("");
@@ -61,7 +71,7 @@ public class GeneralActivity extends AppCompatActivity {
         arrayAdpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listConversation);
         lvDiscussion.setAdapter(arrayAdpt);
         photoBtn = (ImageButton) findViewById(R.id.photoPickerButton);
-        imgView = (ImageView) findViewById(R.id.imageView);
+//        imgView = (ImageView) findViewById(R.id.imageView);
 
 
 
@@ -161,7 +171,16 @@ public class GeneralActivity extends AppCompatActivity {
             filePath = data.getData();
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                imgView.setImageBitmap(bitmap);
+//                imgView.setImageBitmap(bitmap);
+                StorageReference photoRef = mChatPhotosStorageReference.child(filePath.getLastPathSegment());
+                photoRef.putFile(filePath).addOnSuccessListener
+                        (this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                                dbr.updateChildren("usr_");
+                            }
+                        });
+
             }
             catch (IOException e)
             {
