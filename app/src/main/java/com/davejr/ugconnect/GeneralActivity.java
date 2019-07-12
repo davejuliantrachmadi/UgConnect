@@ -38,7 +38,7 @@ import java.util.Map;
 public class GeneralActivity extends AppCompatActivity {
 
     ImageButton btnSendMsg;
-    ImageButton photoBtn;
+ //   ImageButton photoBtn;
 //    ImageView imgView;
 
     EditText etMsg;
@@ -54,7 +54,7 @@ public class GeneralActivity extends AppCompatActivity {
     private DatabaseReference dbr;
     private Uri filePath;
     private FirebaseStorage mFirebaseStorage;
-    private StorageReference mChatPhotosStorageReference;
+  //  private StorageReference mChatPhotosStorageReference;
 
 
 
@@ -63,14 +63,16 @@ public class GeneralActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general);
 
-        mFirebaseStorage = FirebaseStorage.getInstance();
+  //      mFirebaseStorage = FirebaseStorage.getInstance();
         btnSendMsg = (ImageButton) findViewById(R.id.btnSendMsg);
         etMsg = (EditText) findViewById(R.id.etMessage);
-        etMsg.setText("");
+
         lvDiscussion = (ListView) findViewById(R.id.IvConversation);
         arrayAdpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listConversation);
         lvDiscussion.setAdapter(arrayAdpt);
-        photoBtn = (ImageButton) findViewById(R.id.photoPickerButton);
+
+
+    //    photoBtn = (ImageButton) findViewById(R.id.photoPickerButton);
 //        imgView = (ImageView) findViewById(R.id.imageView);
 
 
@@ -85,7 +87,12 @@ public class GeneralActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                DatabaseReference dbr2 = dbr.child("user_msg_key");
+                Map<String, Object> map = new HashMap<String, Object>();
+                user_msg_key = dbr.push().getKey();
+                dbr.updateChildren(map);
+
+
+                DatabaseReference dbr2 = dbr.child(user_msg_key);
                 Map<String, Object> map2 = new HashMap<String, Object>();
                 map2.put("msg", etMsg.getText().toString());
                 map2.put("user", UserName);
@@ -95,7 +102,7 @@ public class GeneralActivity extends AppCompatActivity {
             }
         });
 
-        photoBtn.setOnClickListener(new View.OnClickListener(){
+      /*  photoBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
 
@@ -103,7 +110,7 @@ public class GeneralActivity extends AppCompatActivity {
 
             }
         });
-
+*/
         dbr.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -149,7 +156,7 @@ public class GeneralActivity extends AppCompatActivity {
     }
 
 
-    private void pickFromGallery(){
+ /*   private void pickFromGallery(){
         //Create an Intent with action as ACTION_PICK
         Intent intent=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         // Sets the type as image/*. This ensures only components of type image are selected
@@ -162,7 +169,7 @@ public class GeneralActivity extends AppCompatActivity {
         startActivityForResult(intent,71);
     }
 
-    @Override
+  /*  @Override
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 71 && resultCode == RESULT_OK
@@ -187,5 +194,5 @@ public class GeneralActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-    }
+    } */
 }

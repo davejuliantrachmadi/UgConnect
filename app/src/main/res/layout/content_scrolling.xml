@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ScrollingActivity"
+    tools:showIn="@layout/activity_scrolling">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:paddingRight="30dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+                android:id="@+id/step_view0"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="@color/colorline"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Perkuliahan sebelum UTS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="4 Maret - 4 Mei"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Pendistribusian FRS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="6 Maret - 23 Maret"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Pengisian dan Pengambilan KRS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="Kelas 1 : 11 Maret - 23 Maret | Kelas 2 s/d 4 : 25 Maret - 6 April"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Batas Pengambilan KRS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="16 April"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Batas Kepengurusan Cuti Akademik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="26 April"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view15"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Libur Tenang I"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="6 Mei"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Ujian Tengah Semester(UTS)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="7 Mei - 29 Mei"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Libur Idul Fitri"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="20 Mei - 13 Juni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Daftar Ulang (PSA Online)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="14 Mei - 22 Juni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Perkuliahan Setelah UTS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="17 Juni - 20 Juli"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view11"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Ujian Utama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="22 Juli - 27 Juli"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+
+                android:id="@+id/step_view12"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Ujian Akhir Semester(UAS)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="29 Juli - 16 Agustus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <com.baoyachi.stepview.VerticalStepView
+                android:id="@+id/step_view13"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="vertical setpview"
+                />
+
+            <TextView
+                android:textColor="@color/colorline"
+                android:text="2019"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Libur Antar Semester"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:text="19 Agustus - 14 Desember"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.v4.widget.NestedScrollView>

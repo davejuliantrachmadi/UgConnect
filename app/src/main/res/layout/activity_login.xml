@@ -89,13 +89,32 @@
             android:layout_width="114dp"
             android:layout_height="39dp"
             android:text="LOGIN"
+
             android:background="@drawable/button_rounded"
             />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/btn_login"
+                android:layout_alignStart="@+id/btn_login"
+                android:layout_alignLeft="@+id/btn_login"
+                android:layout_alignEnd="@+id/btn_login"
+                android:layout_alignRight="@+id/btn_login"
+                android:layout_alignParentBottom="true"
+                android:progressDrawable="@drawable/circular_progress_bar" />
         </RelativeLayout>
 
         </LinearLayout>
 
+
+
 </android.support.v7.widget.CardView>
+
+
+
 
 
 </RelativeLayout>

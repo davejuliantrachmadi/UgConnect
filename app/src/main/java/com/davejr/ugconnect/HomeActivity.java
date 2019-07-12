@@ -32,6 +32,8 @@ import java.util.Set;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
+import android.os.*;
+
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -43,10 +45,39 @@ public class HomeActivity extends AppCompatActivity {
     String UserName;
 
     FloatingActionMenu materialDesignFAM;
-    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
+    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3, floatingActionButton4;
 
     private DatabaseReference dbr = FirebaseDatabase.getInstance().getReference().getRoot();
     FirebaseAuth user = FirebaseAuth.getInstance();
+
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage("Do you want to Exit?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //if user pressed "yes", then he is allowed to exit from application
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //if user select "No", just cancel this dialog and continue with app
+                dialog.cancel();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+
+    }
 
 
 
@@ -62,7 +93,9 @@ public class HomeActivity extends AppCompatActivity {
         materialDesignFAM = (FloatingActionMenu) findViewById(R.id.material_design_android_floating_action_menu);
         floatingActionButton1 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item1);
         floatingActionButton2 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item2);
+        floatingActionButton4 = (FloatingActionButton) findViewById(R.id.calendar);
         floatingActionButton3 = (FloatingActionButton) findViewById(R.id.sign_out);
+
 
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +113,18 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        floatingActionButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(HomeActivity.this,ScrollingActivity.class);
+                startActivity(intent);
+
+            }
+
+        });
+
+
         floatingActionButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +135,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
         });
+
 
         getUserName();
 

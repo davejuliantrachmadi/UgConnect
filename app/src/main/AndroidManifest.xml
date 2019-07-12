@@ -4,8 +4,7 @@
     package="com.davejr.ugconnect">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,9 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
+
         <activity
             android:name=".HomeActivity"
-            android:parentActivityName=".HomeActivity"></activity>
+            android:parentActivityName=".HomeActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SAP" />
         <activity android:name=".BAPSI" />
@@ -27,16 +27,15 @@
         <activity android:name=".Staffsite" />
         <activity android:name=".Vclass" />
         <activity android:name=".Studentsite" />
-        <activity android:name=".ActivityFive" />
-        <activity android:name=".ActivityFour" />
-        <activity android:name=".ActivityThree" />
-        <activity android:name=".ActivityTwo" />
-        <activity
-            android:name=".ActivityOne"
+        <activity android:name=".BAAK"
             android:parentActivityName=".Link" />
+        <activity android:name=".ScrollingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".About" />
         <activity android:name=".Link" />
-        <activity android:name=".StartActivity">
+
+        <activity android:name=".StartActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,11 +44,15 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
+
             android:parentActivityName=".StartActivity" />
         <activity
+
             android:name=".LoginActivity"
-            android:parentActivityName=".StartActivity" />
+            android:parentActivityName=".StartActivity"
+            />
         <activity android:name=".GeneralActivity" />
     </application>
+
 
 </manifest>

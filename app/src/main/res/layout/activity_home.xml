@@ -26,13 +26,13 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom|right"
         android:layout_marginLeft="11dp"
-        android:layout_marginRight="11dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="11dp"
         app:menu_animationDelayPerItem="55"
         app:menu_backgroundColor="@android:color/transparent"
         app:menu_buttonSpacing="0dp"
-        app:menu_colorNormal="#da3c2f"
-        app:menu_colorPressed="#dc4b3f"
+        app:menu_colorNormal="#9C27B0"
+        app:menu_colorPressed="#BF73C7"
         app:menu_colorRipple="#99d4d4d4"
         app:menu_fab_size="normal"
         app:menu_icon="@drawable/fab_add"
@@ -45,6 +45,8 @@
         app:menu_labels_margin="0dp"
         app:menu_labels_maxLines="-1"
         app:menu_labels_padding="8dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="17dp"
         app:menu_labels_position="left"
         app:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
         app:menu_labels_showShadow="true"
@@ -74,6 +76,14 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_about"
             app:fab_label="About"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_calendar"
+            app:fab_label="Academic Calendar"
             app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
