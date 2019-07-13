@@ -96,15 +96,28 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:gravity="center">
+>
 
                 <Button
                     android:id="@+id/btn_register"
                     android:layout_width="135dp"
                     android:layout_height="30dp"
                     android:text="REGISTER"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
                     android:background="@drawable/button_rounded"
                     />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
             </RelativeLayout>
 
         </LinearLayout>

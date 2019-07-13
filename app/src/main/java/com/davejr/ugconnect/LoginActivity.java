@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity{
             public void onClick(View v) {
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
+                btn_login.setVisibility(View.GONE);
                 spinner.setVisibility(View.VISIBLE);
 
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){

@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText username,email,password;
     Button btn_register;
+    ProgressBar spinner;
 
     FirebaseAuth auth;
     DatabaseReference reference;
@@ -34,7 +36,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        spinner=(ProgressBar)findViewById(R.id.progressBar);
+        spinner.setVisibility(View.GONE);
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
@@ -45,6 +48,8 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_register.setVisibility(View.GONE);
+                spinner.setVisibility(View.VISIBLE);
                 String txt_username = username.getText().toString();
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
