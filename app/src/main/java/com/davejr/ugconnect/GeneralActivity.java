@@ -33,7 +33,8 @@ public class GeneralActivity extends AppCompatActivity {
     ImageButton btnSendMsg;
     EditText etMsg;
     TextView txtview;
-    ScrollView scroll;
+    ScrollView skrol;
+
 
     String UserName, SelectedTopic, user_msg_key;
 
@@ -44,33 +45,16 @@ public class GeneralActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general);
+        skrol = findViewById(R.id.skrol);
         btnSendMsg = findViewById(R.id.btnSendMsg);
         etMsg = findViewById(R.id.etMessage);
-        txtview = findViewById(R.id.txtvw);
+        txtview = findViewById(R.id.txtview);
         txtview.setMovementMethod(new ScrollingMovementMethod());
-        scroll = findViewById(R.id.skrol);
         UserName = auth.getCurrentUser().getDisplayName();
         SelectedTopic = getIntent().getExtras().get("selected_topic").toString();
         setTitle("Topic : " + SelectedTopic);
         dbr = FirebaseDatabase.getInstance().getReference().child(SelectedTopic);
-        txtview.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (txtview.getLayout().getLineTop(txtview.getLineCount()) - txtview.getHeight() > 0)
-                    txtview.scrollTo(0,txtview.getLayout().getLineTop(txtview.getLineCount()) - txtview.getHeight());
-                else txtview.scrollTo(0,0);
-            }
-        });
         btnSendMsg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,18 +62,35 @@ public class GeneralActivity extends AppCompatActivity {
                 Map<String, Object> map = new HashMap<String, Object>();
                 user_msg_key = dbr.push().getKey();
                 dbr.updateChildren(map);
-
-
                 DatabaseReference dbr2 = dbr.child(user_msg_key);
                 Map<String, Object> map2 = new HashMap<String, Object>();
                 map2.put("msg", etMsg.getText().toString());
                 map2.put("user", UserName);
                 dbr2.updateChildren(map2);
-
                 etMsg.setText("");
 
             }
         });
+
+//            txtview.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                final int screen = txtview.getLayout().getLineTop(txtview.getLineCount()) - txtview.getHeight();
+//                if (screen > 0)
+//                    txtview.scrollTo(0,screen);
+//                else txtview.scrollTo(0,0);
+//            }
+//        });
 
 //        dbr.addValueEventListener(new ValueEventListener() {
 //            @Override
@@ -112,7 +113,7 @@ public class GeneralActivity extends AppCompatActivity {
                     msg = (String) ((DataSnapshot) i.next()).getValue();
                     user = (String) ((DataSnapshot) i.next()).getValue();
                     conversation = user + " : " + msg + "\n";
-                    txtview.append(conversation);
+                    addTxt(conversation);
                 }
             }
 
@@ -124,7 +125,7 @@ public class GeneralActivity extends AppCompatActivity {
                     msg = (String) ((DataSnapshot) i.next()).getValue();
                     user = (String) ((DataSnapshot) i.next()).getValue();
                     conversation = user + " : " + msg + "\n";
-                    txtview.append(conversation);
+                    addTxt(conversation);
                 }
             }
 
@@ -138,6 +139,16 @@ public class GeneralActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public void addTxt(String msg){
+        txtview.append(msg);
+        skrol.post(new Runnable() {
+            @Override
+            public void run() {
+                skrol.fullScroll(View.FOCUS_DOWN);
             }
         });
     }
